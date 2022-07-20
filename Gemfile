@@ -10,7 +10,13 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+#gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg', '1.1.4'
+end
 
 
 # Use the Puma web server [https://github.com/puma/puma]
